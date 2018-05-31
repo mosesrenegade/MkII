@@ -1,17 +1,14 @@
 ---
 - name: Make sure we are syncing time
   package: name=ntp state=installed
-  become: true
   tags: ntp
 
 - name: Make sure ntp sync is configured
   template: src=ntp.conf.j2 dest=/etc/ntp.conf
-  become: true
   notify:
     - restart ntpd
   tags: ntp
 
 - name: Make sure ntpd is running
-  become: true
   service: name=ntp state=running enabled=yes
   tags: ntp

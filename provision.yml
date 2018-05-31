@@ -2,4 +2,4 @@
 - hosts: production
   user: root
   roles:
-  - { roles: common, sudo: yes }
+  - common
