@@ -1,0 +1,9 @@
+---
+- hosts: production
+  user: root
+  roles:
+  - common
+  - ufw
+  - user
+  - nginx
+  - php
